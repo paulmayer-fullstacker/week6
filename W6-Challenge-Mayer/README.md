@@ -61,3 +61,14 @@ Contact Info: me@gmail
 This document has been created for Paul Mayer, using EZ Read-Me Doc Generator.  
 Date/Time: 10-07-2025 21:20  
 EZ Read-Me Doc Generator is unlicensed and free to use.
+
+---
+## Notes:
+On new repo creation, .gitignore file added. This file was edited to exclude the venv, by adding the line **/myvenv/. So, ignoring any file named myvenv anywhere (in root or subdirectory).
+
+The VEnv (myvenv), was installed from the Command Line (Cmd), with: python -m venv myvenv. 
+The VEnv was then activated with: .\myvenv\Scripts\activate
+
+Dependancies required to run the project are listed at requirements.txt. Dependant resources were installed to the VEnv from the command line, with: pip install -r requirements.txt
+
+The project was run to create the Markdown file README_TEST.md. See README_TEST.md to view run results.
