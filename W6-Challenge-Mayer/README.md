@@ -38,9 +38,9 @@ This file contains a single function (multiline_input()), that retrieves the lon
 
 #### Redundant Code
 
-During development consol.print() was judiciously employed to confirm the assignment of data elements (in the answers dictionary and the Project object), and to model styling strategies. Though now redundant, these segments of code have been retained (commented out) to demonstrate part of the development process. 
+During development consol.print() was judiciously employed to confirm the assignment of data elements (in the answers dictionary and the Project object), and to model styling strategies. Though now redundant, these segments of code have been retained (commented out) to demonstrate that part of the development process. 
 
-At one point during development, the main.py file defined a function that implemented progress bar (loading_simulation()). This was to be used while the ReadMe.md file was being created. However, this was a simulation of progress, only displaying elapsed time. The feature was removed from the final deployment, as a frivolous exercise. The code remains in place, now commented out.
+At one point during development, the main.py file defined a function that implemented a progress bar (loading_simulation()). This was to be used while the ReadMe.md file was being created. However, this was a simulation of progress that simply displayed elapsed time, as a purely aesthetic filler. The feature was removed from the final deployment, as a frivolous exercise. The code remains in place, now commented out.
 
 ---
 
@@ -77,7 +77,10 @@ My solution is contained within a project called: W6-Challenge-Mayer.
 
 ## To Conclude:
 
-I hope that that this submission is adequate and appropriate, at this stage of the course.
+I hope that that this submission is adequate and appropriate, at this stage of the course.  
+
+Though I believe that the project does fulfil the challenge requirements brief, I do not believe it to be sufficiently flexible/scalable to draft this ReadMe.md document.
+
 
 ---
 
