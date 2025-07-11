@@ -33,7 +33,7 @@ questions = [
     },
 ]
 # answer: Dictionary containing all project information in key:value pairs
-answers = prompt(questions=questions, style={"question": "blue", "answer": "red"})
+answers = prompt(questions=questions, style={"question": "yellow", "answer": "gray"})
 
 # Now, use the custom multi-line input function for lnger texts
 answers["aboutTheAuthor"] = multiline_input("About the author (a short CV offering qualifications and experiance):")

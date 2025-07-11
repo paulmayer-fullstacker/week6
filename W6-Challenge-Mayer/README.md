@@ -16,7 +16,7 @@ Specific solution features and coding strategies are not listed within this docu
 
 ### Behind the README File Generator
 
-The main functionality of the ReadMe file generator is defined within the main.py file; the entry point for the solution. 
+The main functionality of the ReadMe file generator is defined within the main.py file; the entry point for the solution. The main.py script utilises project.py and function.py files.
 
 #### main.py
 
@@ -25,8 +25,6 @@ Main presents a welcome message using 'rich.console'. It then goes on to questio
 Main collects all the user responses into a dictionary (answers). With 'answers' in the bag (dictionary), I could have proceeded to create the readme file. However, for this project, a key learning item was creating and using classes. So, the project information was transferred to a Project object. Using an object to persist our project information does offer benefits in further processing the information for presentation.
 
 Main uses the return from a call to Project's create_MD_doc() method to create and write (overwrite if already existing) our ReadMe.md file. Main also deals with exception handling of this process.
-
-At one point during development, the main.py file defined a function that implemented progress bar (loading_simulation()). This was to be used while the ReadMe.md file was being created. However, this was a simulation of progress, only displaying elapsed time. The feature was removed from the final deployment, as a frivolous exercise. The code remain in place, now commented out.
 
 #### project.py
 
@@ -37,6 +35,12 @@ The create_MD_doc() function also adds a publishing_message to the end of the do
 #### function.py
 
 This file contains a single function (multiline_input()), that retrieves the long multi-line text inputs from the user. The multiline_input() function does interact directly with the user, requesting multi-line input. This was probably not my best design decision, as it doesn't adhere to clean/clear division of labour between modules. It doesn't really enhance maintainability or promote code reuse. With the clock ticking to submit the project, Caveat No1 applies.
+
+#### Redundant Code
+
+During development consol.print() was judiciously employed to confirm the assignment of data elements (in the answers dictionary and the Project object), and to model styling strategies. Though now redundant, these segments of code have been retained (commented out) to demonstrate part of the development process. 
+
+At one point during development, the main.py file defined a function that implemented progress bar (loading_simulation()). This was to be used while the ReadMe.md file was being created. However, this was a simulation of progress, only displaying elapsed time. The feature was removed from the final deployment, as a frivolous exercise. The code remains in place, now commented out.
 
 ---
 
