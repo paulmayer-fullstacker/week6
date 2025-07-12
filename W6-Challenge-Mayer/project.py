@@ -37,27 +37,26 @@ class Project:
             doc_info.append("## Usage Information\n") # Sub-title
             doc_info.append(f"{self.usage_information}\n") # Section content
             doc_info.append("\n---\n") # Separator
-
-        # If there are installation_instructions, add 'Installation' <h2> to document, followed by the installation instructions.
+        
+        # Installation instructions
         if self.installation_instructions:
             doc_info.append("## Installation\n")
             doc_info.append(f"\n{self.installation_instructions}\n")
             doc_info.append("\n---\n")
 
-        # Add licensing info. Sub-title 'Licensing' <h2>, followed by the license information.
-        doc_info.append("## Licensing\n")
+        # Add licensing
         doc_info.append(f"{self.license_type}\n")
         doc_info.append("\n---\n") 
        
         # Add information about the author
         doc_info.append("## About the Author\n")
         doc_info.append(f"Author: {self.author_name}\n")
-        # If there is information about the author add brief history (quals/experience) here.
+        # If there is information about the author, add brief CV, here.
         if self.about_the_author:
             doc_info.append("### Curriculum Vitae\n")   #sub-heading <h3>
             doc_info.append(f"{self.about_the_author}\n")
         doc_info.append(f"Contact Info: {self.contact_info}\n")
-        doc_info.append("\n") # Add newlin, for spacing
+        doc_info.append("\n")
         doc_info.append("\n---\n---\n") # Double separator
         
         doc_info.append(f"\n{self.publishing_message}\n") # Add publishing_message as footer

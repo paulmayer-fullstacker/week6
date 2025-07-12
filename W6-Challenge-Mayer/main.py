@@ -2,8 +2,8 @@ from InquirerPy import prompt
 from project import Project # Import the Project class from my project.py file
 # multiline_input requies Console and creates a console. So, also import that console
 from function import multiline_input, console
-import time
-from rich.progress import track
+#-# import time      # time and track imported for the progress bar. Now retired.
+#-# from rich.progress import track
 
 # Create readme.md file, or repurpose to create any file and/or path
 file_name = "README_TEST.md"
@@ -46,10 +46,9 @@ answers["installationInstructions"] = multiline_input("Installation Instructions
 # For the purpose of creating the ReadMe.md file a Dictionary (answers) would have been sufficient.
 # However, for this project, a key learning item is creating and using classes. 
 # Hense, the project information will now be transfered to a Project object.
-# Using an object to persist our project information may have benefits, 
-# should we need to further process the information.
+# Using an object to persist our project information will have benefits, in further process the information.
  
-# Initialise the Project object with project information from the answers dictionary. 
+# Create a Project object with project information from the answers dictionary. 
 project_information = Project(
     project_title = answers["projectTitle"],
     author_name = answers["authorName"],
@@ -61,11 +60,11 @@ project_information = Project(
     installation_instructions = answers["installationInstructions"]
 )
 
-# # Function implementing progress bar
-# def loading_simulation():
-#     console.print("[bold cyan]Creating Your File.[/bold cyan]")  # Widget title/explanation
-#     for _ in track(range(10), description="Building..."): # Loop through 10 items to simulate the build
-#         time.sleep(0.8)  # Simulate work taking time. Each segment (of 10) takes 0.8sec
+#-# # Function implementing progress bar
+#-# def loading_simulation():
+#-#     console.print("[bold cyan]Creating Your File.[/bold cyan]")  # Widget title/explanation
+#-#     for _ in track(range(10), description="Building..."): # Loop through 10 items to simulate the build
+#-#         time.sleep(0.8)  # Simulate work taking time. Each segment (of 10) takes 0.8sec
 
 # # Test: Display infor in the answers dictionary
 # console.print(
@@ -78,24 +77,23 @@ project_information = Project(
 #     f'[bold blue] Licenseing: [/bold blue] [green] {answers["license"]}[/green]\n'
 # )
 
-# Test: Print info, from the Project object
+# # Test: Print info, from the Project object
 # console.print(f"[bold Red]Project Title:[/bold red]\n{project_information.project_title}")
 # console.print(f"[bold Red]Project Description:[/bold red]\n{project_information.project_description}")
 # console.print(f"[bold Red]Licenseing:[/bold red]\n{project_information.license_type}")
 
-# project_information.create_MD_doc(file_name)
 # try to write the file. If file exists, it will be overwritten
 try:  #Creat or open the file ready to write in utf-8
     with open(file_name, "w", encoding="utf-8") as file:
         # Call the Project object's create_MD_doc() method. Write the returned str value to the file. 
         file.write(project_information.create_MD_doc())
-        # loading_simulation()  # Display progress bar simulating work over time. # Removed, as fascile exercise
+        #-# loading_simulation()  # Display progress bar simulating work over time. # Removed, as fascile exercise
     # On completion, print SUCCESS   
     console.print(f"\n[bold green]Successfully generated {file_name}[/bold green]")
-   # Catch exception on failure to write file
+   # Catch exception on failure to write file due to IO issue
 except IOError as e:
     # On failure pring ERROR msg, plua system generated error msg (e). 
-    console.print(f"[bold red]ERROR! We encountered a problem writing file:[/bold red] {e}")
+    console.print(f"[bold red]ERROR! We encountered a problem writing your file:[/bold red] {e}")
     # Catch-all for any other exception.
 except Exception as e:
     # Catches any other error. Print ERROR msg, plus system generated msg (e).

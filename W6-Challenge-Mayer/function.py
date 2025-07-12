@@ -1,15 +1,15 @@
 from rich.console import Console
 
-# Initialise Rich console
+# create Rich.Console object
 console = Console()
 
 # Function that accepts one string argumen (message).
 def multiline_input(message):
-    # Offer user multi-line input using Rich's console.input. The user types 'END' on a new line to terminate.
+    # Offer user multi-line input using Rich.Consol's console.input. The user types 'END' on a new line to submit their input.
     console.print(f"[yellow]{message}[/yellow] (Type [red]'END'[/red] on a new line to finish)")
-    # Initialise an empty list: 'lines'
+    # make an empty list: 'lines'
     lines = []
-    # Start infinite loop
+    
     while True:
         # Get user input, line-by-line. User text input is captured as string. On <Enter> string is assigned to 'line'.
         line = console.input()
